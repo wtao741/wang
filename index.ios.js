@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import NavigatorTest from './js/test/NavigatorTest.js';
+import ListViewTest from './js/test/ListViewTest.js';
+import FetchTest from './js/test/FetchTest.js';
 
 export default class wang extends Component {
     constructor(props) {
@@ -43,7 +45,7 @@ export default class wang extends Component {
                         renderIcon={() => <Image style={styles.imageStyle} source={require('./res/images/ic_trending.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.imageStyle,{tintColor:'red'}]} source={require('./res/images/ic_trending.png')}/>}
                         onPress={() => this.setState({ selectedTab: 'tab_treding' })}>
-                        <View style={styles.page2}></View>
+                        <ListViewTest/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'tab_favorite'}
@@ -52,7 +54,7 @@ export default class wang extends Component {
                         renderIcon={() => <Image style={styles.imageStyle} source={require('./res/images/ic_favorite.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.imageStyle,{tintColor:'red'}]}  source={require('./res/images/ic_favorite.png')}/>}
                         onPress={() => this.setState({ selectedTab: 'tab_favorite' })}>
-                        <View style={styles.page1}></View>
+                        <FetchTest/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'tab_my'}
