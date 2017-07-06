@@ -9,6 +9,7 @@ import {
     Navigator
 }from 'react-native';
 import Girl from './Girl';
+import NavigatorBar from '../common/NavigatorBar';
 
 export default class Boy extends Component{
     constructor(props){
@@ -21,6 +22,11 @@ export default class Boy extends Component{
     render(){
         return (
             <View style={styles.container}>
+
+                <NavigatorBar
+                    title={'Boy'}
+                    style={{backgroundColor:'red'}}/>
+
                 <Text style={styles.text}>I am a good boy!</Text>
                 <Text style={styles.text} onPress={()=>{
                     this.props.navigator.push({
@@ -44,7 +50,6 @@ export default class Boy extends Component{
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        justifyContent:'center'
     },
     text:{
         fontSize:22
