@@ -13,6 +13,7 @@ import {
     Image
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
+import NavigatorTest from './js/test/NavigatorTest.js';
 
 export default class wang extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export default class wang extends Component {
                         renderIcon={() => <Image style={styles.imageStyle} source={require('./res/images/ic_polular.png')} />}
                         renderSelectedIcon={() => <Image style={[styles.imageStyle,{tintColor:'red'}]}  source={require('./res/images/ic_polular.png')}/>}
                         onPress={() => this.setState({ selectedTab: 'tab_popular' })}>
-                        <View style={styles.page1}></View>
+                        <NavigatorTest/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'tab_treding'}
